@@ -30,13 +30,14 @@ function shift_cipher_form() {
       '#title' => 'Direction',
       '#type' => 'textfield',
       '#description' => t('Enter the direction you would like to shift, you must enter either right or left'),
-      '#element_validate' => array('element_validate_words'),
+      // '#element_validate' => array('element_validate_words'),
       '#required' => TRUE,
   );
   $form['phrase'] = array(
       '#title' => 'Phrase',
       '#type' => 'textfield',
       '#description' => t('Enter the phrase you would like ciphered'),
+      '#required' => TRUE,
   );
   $form['submit'] = array(
       '#type' => 'submit',
@@ -45,3 +46,15 @@ function shift_cipher_form() {
 
   return $form;
 }
+
+function element_validate_positive($element) {
+  if ($element['#value'] < 0) {
+    form_error($element, t('Must be a positive number'));
+  }
+}
+
+// function element_validate_words($element) {
+//     if (($element['#value'] != 'right') || ($element['#value'] != 'left')) {
+//       form_error($element, t("You must enter a valid direction, valid directions are 'right' or 'left'"));
+//     }
+// }
