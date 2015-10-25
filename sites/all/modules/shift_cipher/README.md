@@ -1,9 +1,9 @@
-Sum Drupal Module
+Shift Cipher Module
 =================
 
 By Micah Courey, 23-Oct-2015
 
-A custom module for Drupal which encrypts user input using a Shift Cipher.
+A custom module for Drupal which encrypts user input using a shift cipher.
 
 Setup
 ----------
